@@ -13,6 +13,7 @@ ${statsBar()}
 ${faq()}
 ${ctaSection()}
 ${footer()}
+${contactModal()}
 `;
 
 init();
@@ -33,8 +34,8 @@ function navbar() {
         <li><a href="#faq">FAQ</a></li>
       </ul>
       <div class="nav-right">
-        <a href="mailto:support@a2zflow.in" class="btn btn-outline">Contact Us</a>
-        <a href="#cta" class="btn btn-brand">Get a Demo</a>
+        <button class="btn btn-outline open-modal-btn" data-type="contact">Contact Us</button>
+        <button class="btn btn-brand open-modal-btn" data-type="demo">Get a Demo</button>
       </div>
       <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -56,10 +57,10 @@ function hero() {
         <h1>We automate your<br/><span class="typed-text" id="typed-text">restaurant</span><span class="typed-cursor" id="typed-cursor"></span><br/>with AI workflows.</h1>
         <p class="hero-desc">A2Z Flow builds and deploys custom AI systems that take over manual tasks — ordering, scheduling, customer support, and more. Your business runs smarter.</p>
         <div class="hero-actions">
-          <a href="#cta" class="btn btn-brand">
+          <button class="btn btn-brand open-modal-btn" data-type="demo">
             Get Started
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
+          </button>
           <a href="#use-cases" class="btn btn-outline">See Use Cases</a>
         </div>
       </div>
@@ -77,22 +78,22 @@ function hero() {
         </div>
         <div class="hero-visual-body">
           <div class="hv-sidebar">
-            <div class="hv-sidebar-item active">📋 Order Flow</div>
-            <div class="hv-sidebar-item">🧠 AI Engine</div>
-            <div class="hv-sidebar-item">💳 Payments</div>
-            <div class="hv-sidebar-item">📊 Reports</div>
-            <div class="hv-sidebar-item">⚙️ Config</div>
+            <div class="hv-sidebar-item active"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg> Order Flow</div>
+            <div class="hv-sidebar-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg> AI Engine</div>
+            <div class="hv-sidebar-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg> Payments</div>
+            <div class="hv-sidebar-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="M18 16V8"/><path d="M12 16V4"/><path d="M6 16v-6"/></svg> Reports</div>
+            <div class="hv-sidebar-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33h.09a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg> Config</div>
           </div>
           <div class="hv-canvas">
-            <div class="hv-node"><span class="n-icon">📱</span><span class="n-label">QR Scan</span><span class="n-sub">trigger</span></div>
+            <div class="hv-node"><span class="n-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="5" height="5" x="3" y="3" rx="1"/><rect width="5" height="5" x="16" y="3" rx="1"/><rect width="5" height="5" x="3" y="16" rx="1"/><path d="M21 16h-3a2 2 0 0 0-2 2v3"/><path d="M21 21v.01"/><path d="M12 7v3a2 2 0 0 1-2 2H7"/><path d="M3 12h.01"/><path d="M12 3h.01"/><path d="M12 16v.01"/><path d="M16 12h1"/><path d="M21 12v.01"/><path d="M12 21v-1"/></svg></span><span class="n-label">QR Scan</span><span class="n-sub">trigger</span></div>
             <div class="hv-connector"></div>
-            <div class="hv-node"><span class="n-icon">🍕</span><span class="n-label">Show Menu + AI Picks</span><span class="n-sub">ai-rec</span></div>
+            <div class="hv-node"><span class="n-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="14" height="18" rx="2" ry="2"></rect><line x1="7" y1="8" x2="13" y2="8"></line><line x1="7" y1="12" x2="13" y2="12"></line><line x1="7" y1="16" x2="10" y2="16"></line><circle cx="17" cy="17" r="6" fill="var(--bg-dark)"></circle><text x="17" y="19" font-size="7" font-family="sans-serif" font-weight="700" text-anchor="middle" stroke="none" fill="currentColor">AI</text></svg></span><span class="n-label">Show Menu + AI Picks</span><span class="n-sub">ai-rec</span></div>
             <div class="hv-connector"></div>
-            <div class="hv-node"><span class="n-icon">🛒</span><span class="n-label">Cart & Payment</span><span class="n-sub">stripe</span></div>
+            <div class="hv-node"><span class="n-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line><path d="M6 15h4"></path></svg></span><span class="n-label">Cart & Payment</span><span class="n-sub">stripe</span></div>
             <div class="hv-connector"></div>
-            <div class="hv-node"><span class="n-icon">👨‍🍳</span><span class="n-label">Send to Kitchen Display</span><span class="n-sub">action</span></div>
+            <div class="hv-node"><span class="n-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="4" width="15" height="12" rx="2"></rect><path d="M11 20h7"></path><path d="M14.5 16v4"></path><path d="M10 10H1"></path><path d="M7 7l3 3-3 3"></path></svg></span><span class="n-label">Send to Kitchen Display</span><span class="n-sub">action</span></div>
             <div class="hv-connector"></div>
-            <div class="hv-node"><span class="n-icon">✅</span><span class="n-label">Notify Customer — Ready!</span><span class="n-sub">sms</span></div>
+            <div class="hv-node"><span class="n-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><path d="M9 11l2 2 4-4"></path></svg></span><span class="n-label">Notify Customer</span><span class="n-sub">sms</span></div>
           </div>
         </div>
       </div>
@@ -121,31 +122,31 @@ function bento() {
       </div>
       <div class="bento-grid">
         <div class="bento-card span-2 reveal reveal-d1">
-          <span class="b-emoji">🤖</span>
+          <span class="b-emoji"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"></path><rect width="16" height="12" x="4" y="8" rx="2"></rect><path d="M2 14h2"></path><path d="M20 14h2"></path><path d="M15 13v2"></path><path d="M9 13v2"></path></svg></span>
           <h3>AI That Understands Your Business</h3>
           <p>We don't just slap a chatbot on your website. We study your operations, map every process, and build AI workflows that actually solve real problems — ordering, scheduling, triaging, reporting.</p>
           <span class="b-tag">Core</span>
         </div>
         <div class="bento-card reveal reveal-d2">
-          <span class="b-emoji">⚡</span>
+          <span class="b-emoji"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg></span>
           <h3>Live in 2 Weeks</h3>
           <p>From first conversation to fully deployed workflow in your business — typically under 14 days.</p>
           <span class="b-tag">Speed</span>
         </div>
         <div class="bento-card reveal reveal-d1">
-          <span class="b-emoji">🔗</span>
+          <span class="b-emoji"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></span>
           <h3>Plugs Into Everything</h3>
           <p>POS systems, payment gateways, WhatsApp, email, SMS, CRMs — we integrate with your existing stack.</p>
           <span class="b-tag">Integrations</span>
         </div>
         <div class="bento-card reveal reveal-d2">
-          <span class="b-emoji">📊</span>
+          <span class="b-emoji"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="4" height="16" x="6" y="4" rx="1"></rect><rect width="4" height="8" x="14" y="12" rx="1"></rect><path d="M2 20h20"></path></svg></span>
           <h3>Real-Time Dashboard</h3>
           <p>See orders, appointments, tickets, and performance in one beautiful dashboard. Updated live.</p>
           <span class="b-tag">Analytics</span>
         </div>
         <div class="bento-card reveal reveal-d3">
-          <span class="b-emoji">🔒</span>
+          <span class="b-emoji"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span>
           <h3>Secure by Default</h3>
           <p>End-to-end encryption, data privacy compliance, and regular security audits. Your data stays yours.</p>
           <span class="b-tag">Security</span>
@@ -187,42 +188,42 @@ function timeline() {
 function cases() {
   const data = {
     restaurant: {
-      emoji: '🍽️', title: 'Restaurants & Cafés',
+      emoji: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:4px;"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path><path d="M7 2v20"></path><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path></svg>', title: 'Restaurants & Cafés',
       problem: 'Hiring servers is expensive, orders get mixed up, customers wait too long.',
       solution: 'Customers scan a QR code → browse the AI-powered menu → get personalized recommendations → order and pay from their phone. Orders go straight to the kitchen.',
       result: '40% less staff cost · Zero order errors · 3x faster service',
       steps: ['Customer scans QR at table', 'AI shows menu + suggests dishes', 'Customer orders & pays on phone', 'Order appears on kitchen display', 'Customer gets notified when ready']
     },
     clinic: {
-      emoji: '🏥', title: 'Clinics & Hospitals',
+      emoji: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:4px;"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>', title: 'Clinics & Hospitals',
       problem: 'Receptionists are bottlenecks. Patients wait, appointments get messy, phone lines are always busy.',
       solution: 'AI receptionist handles check-in, appointment scheduling, insurance verification, and basic triage — 24/7 via phone, WhatsApp, or kiosk.',
       result: 'No receptionist needed · Patients served in seconds · 24/7 availability',
       steps: ['Patient messages or calls', 'AI verifies identity & insurance', 'Schedules or checks in instantly', 'Sends confirmation + reminders', 'Alerts doctor when patient arrives']
     },
     salon: {
-      emoji: '💇', title: 'Salons & Spas',
+      emoji: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:4px;"><circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><line x1="20" y1="4" x2="8.12" y2="15.88"></line><line x1="14.47" y1="14.48" x2="20" y2="20"></line><line x1="8.12" y1="8.12" x2="12" y2="12"></line></svg>', title: 'Salons & Spas',
       problem: 'Missed calls mean lost bookings. Double bookings cause chaos. No-shows waste everyone\'s time.',
       solution: 'AI booking assistant handles 24/7 appointment scheduling, automated reminders, smart waitlist management, and suggests services based on history.',
       result: '90% fewer no-shows · 24/7 online bookings · Zero scheduling conflicts',
       steps: ['Client books via chat or link', 'AI finds perfect time slot', 'Sends confirmation instantly', 'Reminder 24h + 1h before', 'Auto-fills cancelled slots from waitlist']
     },
     hotel: {
-      emoji: '🏨', title: 'Hotels & Resorts',
+      emoji: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:4px;"><path d="M10 22v-6.57"></path><path d="M12 11h.01"></path><path d="M12 7h.01"></path><path d="M14 15.43V22"></path><path d="M15 16a5 5 0 0 0-6 0"></path><path d="M16 11h.01"></path><path d="M16 7h.01"></path><path d="M8 11h.01"></path><path d="M8 7h.01"></path><rect x="4" y="2" width="16" height="20" rx="2"></rect></svg>', title: 'Hotels & Resorts',
       problem: 'Front desk is overwhelmed. Room service is slow. Guests can\'t get quick answers about amenities.',
       solution: 'AI concierge on the guest\'s phone — handles check-in, room service, local recommendations, housekeeping requests, and checkout. No app download needed.',
       result: 'Premium guest experience · 50% less front-desk load · Higher reviews',
       steps: ['Guest receives link at booking', 'Self check-in on arrival', 'Order room service via chat', 'Request housekeeping instantly', 'Express checkout + feedback']
     },
     retail: {
-      emoji: '🛒', title: 'Retail Stores',
+      emoji: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:4px;"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>', title: 'Retail Stores',
       problem: 'Long checkout queues drive customers away. Staff can\'t answer every product question. Inventory tracking is manual.',
       solution: 'AI-powered self-checkout, product Q&A via QR codes, real-time inventory alerts, and smart reorder suggestions.',
       result: 'Faster checkout · Smarter inventory · Happier customers',
       steps: ['Customer scans product QR', 'Gets AI-powered product info', 'Adds to digital cart', 'Self-checkout & pay', 'Inventory auto-updates']
     },
     office: {
-      emoji: '🏢', title: 'Offices & Co-Working',
+      emoji: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:4px;"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><path d="M9 22v-4h6v4"></path><path d="M8 6h.01"></path><path d="M16 6h.01"></path><path d="M12 6h.01"></path><path d="M12 10h.01"></path><path d="M12 14h.01"></path><path d="M16 10h.01"></path><path d="M16 14h.01"></path><path d="M8 10h.01"></path><path d="M8 14h.01"></path></svg>', title: 'Offices & Co-Working',
       problem: 'Visitor management is a mess. Meeting rooms are always double-booked. IT gets flooded with basic questions.',
       solution: 'AI handles visitor registration, meeting room scheduling, common IT helpdesk queries, and facility requests — all automatically.',
       result: '60% less admin work · Smooth visitor flow · Instant IT support',
@@ -249,9 +250,9 @@ function cases() {
         <div class="case-detail${i === 0 ? ' active' : ''}" data-case-panel="${k}">
           <div class="cd-text">
             <h3>${c.emoji} ${c.title}</h3>
-            <div class="cd-problem">❌ <span>${c.problem}</span></div>
-            <div class="cd-solution">💡 <span>${c.solution}</span></div>
-            <div class="cd-result">✅ <span>${c.result}</span></div>
+            <div class="cd-problem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;color:var(--red)"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg> <span>${c.problem}</span></div>
+            <div class="cd-solution"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;color:var(--amber)"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg> <span>${c.solution}</span></div>
+            <div class="cd-result"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;color:var(--green)"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> <span>${c.result}</span></div>
           </div>
           <div class="cd-visual">
             ${c.steps.map((s, j) => `<div class="cd-step"><span class="step-n">${j + 1}</span>${s}</div>`).join('')}
@@ -314,11 +315,11 @@ function ctaSection() {
       <h2>Ready to automate your business?</h2>
       <p class="cta-desc">Tell us what you want to automate. We'll show you exactly how it works and how much you'll save — for free, no strings attached.</p>
       <div class="cta-actions">
-        <a href="mailto:support@a2zflow.in" class="btn btn-brand">
+        <button class="btn btn-brand open-modal-btn" data-type="contact">
           Get in Touch
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="mailto:support@a2zflow.in?subject=Demo%20Request" class="btn btn-outline">Request a Demo</a>
+        </button>
+        <button class="btn btn-outline open-modal-btn" data-type="demo">Request a Demo</button>
       </div>
       <p class="cta-email">Or email us directly at <a href="mailto:support@a2zflow.in">support@a2zflow.in</a></p>
     </div>
@@ -356,8 +357,8 @@ function footer() {
         <div class="footer-col">
           <h4>Contact</h4>
           <ul>
+            <li><button class="open-modal-btn" data-type="contact" style="padding:0;font-size:inherit;color:inherit;font-weight:inherit;">Contact Form</button></li>
             <li><a href="mailto:support@a2zflow.in">support@a2zflow.in</a></li>
-            <li><a href="#">a2zflow.in</a></li>
           </ul>
         </div>
       </div>
@@ -367,6 +368,55 @@ function footer() {
       </div>
     </div>
   </footer>`;
+}
+
+function contactModal() {
+  return `
+  <div class="modal-overlay" id="contact-modal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="modal-title">Get in Touch</h3>
+        <button class="modal-close" id="modal-close" aria-label="Close">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="form-desc">Fill out the form below and our team will get back to you within 24 hours.</p>
+        <form id="contact-form">
+          <input type="hidden" id="form-type" name="type" value="contact">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required placeholder="John Doe">
+            </div>
+            <div class="form-group">
+              <label for="email">Work Email *</label>
+              <input type="email" id="email" name="email" required placeholder="john@company.com">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company" placeholder="Company Name">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 90000 00000">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">How can we help? *</label>
+            <textarea id="message" name="message" required placeholder="Tell us about the processes you want to automate..."></textarea>
+          </div>
+          <button type="submit" class="form-submit" id="submit-btn">
+            <span class="btn-text">Submit Request</span>
+            <div class="spinner"></div>
+          </button>
+          <div class="form-status" id="form-status"></div>
+        </form>
+      </div>
+    </div>
+  </div>`;
 }
 
 // ============================================================
@@ -381,6 +431,7 @@ function init() {
   initCaseTabs();
   initFAQ();
   initStatCounters();
+  initContactModal();
 }
 
 function initSmoothScroll() {
@@ -493,4 +544,73 @@ function initStatCounters() {
 
   const section = document.querySelector('.stats-section');
   if (section) obs.observe(section);
+}
+
+function initContactModal() {
+  const modal = document.getElementById('contact-modal');
+  const closeBtn = document.getElementById('modal-close');
+  const form = document.getElementById('contact-form');
+  const formType = document.getElementById('form-type');
+  const modalTitle = document.getElementById('modal-title');
+  const statusEl = document.getElementById('form-status');
+  const submitBtn = document.getElementById('submit-btn');
+
+  if (!modal) return;
+
+  // Open modal
+  document.querySelectorAll('.open-modal-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const type = btn.dataset.type || 'contact';
+      formType.value = type;
+      modalTitle.textContent = type === 'demo' ? 'Request a Demo' : 'Get in Touch';
+      modal.classList.add('open');
+      statusEl.style.display = 'none';
+      statusEl.className = 'form-status';
+    });
+  });
+
+  // Close modal
+  const closeModal = () => modal.classList.remove('open');
+  closeBtn?.addEventListener('click', closeModal);
+  modal?.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  // Form submit
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.classList.add('loading');
+    statusEl.style.display = 'none';
+    statusEl.className = 'form-status';
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const res = await fetch('http://localhost:3001/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      const result = await res.json();
+
+      if (res.ok && result.success) {
+        statusEl.textContent = result.message;
+        statusEl.classList.add('success');
+        form.reset();
+        setTimeout(closeModal, 3000);
+      } else {
+        throw new Error(result.error || 'Failed to submit form');
+      }
+    } catch (err) {
+      statusEl.textContent = err.message || 'Network error. Make sure the backend server is running.';
+      statusEl.classList.add('error');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.classList.remove('loading');
+      statusEl.style.display = 'block';
+    }
+  });
 }
