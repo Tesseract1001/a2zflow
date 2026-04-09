@@ -26,8 +26,9 @@ init();
 function navbar() {
   return `
   <nav class="navbar">
+    <div class="scroll-progress" id="scroll-progress"></div>
     <div class="container">
-      <a href="#" class="nav-logo"><img src="/logo.png" alt="A2Z Flow"/>A2Z Flow<span class="brand-dot">.</span></a>
+      <a href="#" class="nav-logo"><img src="/logo.png" alt="A2Z Flow"/></a>
       <ul class="nav-links" id="nav-links">
         <li><a href="#features">Features</a></li>
         <li><a href="#process">Process</a></li>
@@ -66,7 +67,7 @@ function hero() {
         </div>
       </div>
 
-      <div class="hero-visual reveal">
+      <div class="hero-visual reveal" id="hero-visual">
         <div class="hero-visual-header">
           <span class="dot" style="background:#ff5f57"></span>
           <span class="dot" style="background:#ffbd2e"></span>
@@ -122,35 +123,45 @@ function bento() {
         <p class="section-desc">We build exactly what you need — no bloat, no learning curve, no DIY headaches.</p>
       </div>
       <div class="bento-grid">
-        <div class="bento-card span-2 reveal reveal-d1">
-          <span class="b-emoji"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"></path><rect width="16" height="12" x="4" y="8" rx="2"></rect><path d="M2 14h2"></path><path d="M20 14h2"></path><path d="M15 13v2"></path><path d="M9 13v2"></path></svg></span>
-          <h3>AI That Understands Your Business</h3>
-          <p>We don't just slap a chatbot on your website. We study your operations, map every process, and build AI workflows that actually solve real problems — ordering, scheduling, triaging, reporting.</p>
-          <span class="b-tag">Core</span>
+        <div class="bento-card span-2 reveal tilt-card">
+          <div class="card-content">
+            <span class="b-emoji"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"></path><rect width="16" height="12" x="4" y="8" rx="2"></rect><path d="M2 14h2"></path><path d="M20 14h2"></path><path d="M15 13v2"></path><path d="M9 13v2"></path></svg></span>
+            <h3>AI That Understands Your Business</h3>
+            <p>We don't just slap a chatbot on your website. We study your operations, map every process, and build AI workflows that actually solve real problems — ordering, scheduling, triaging, reporting.</p>
+            <span class="b-tag">Core</span>
+          </div>
         </div>
-        <div class="bento-card reveal reveal-d2">
-          <span class="b-emoji"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg></span>
-          <h3>Live in 48 Hours</h3>
-          <p>From sign-up to a fully deployed AI agent handling real customers — typically under 2 days.</p>
-          <span class="b-tag">Speed</span>
+        <div class="bento-card reveal tilt-card">
+          <div class="card-content">
+            <span class="b-emoji"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg></span>
+            <h3>Live in 48 Hours</h3>
+            <p>From sign-up to a fully deployed AI agent handling real customers — typically under 2 days.</p>
+            <span class="b-tag">Speed</span>
+          </div>
         </div>
-        <div class="bento-card reveal reveal-d1">
-          <span class="b-emoji"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></span>
-          <h3>Plugs Into Everything</h3>
-          <p>POS systems, payment gateways, WhatsApp, email, SMS, CRMs — we integrate with your existing stack.</p>
-          <span class="b-tag">Integrations</span>
+        <div class="bento-card reveal tilt-card">
+          <div class="card-content">
+            <span class="b-emoji"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></span>
+            <h3>Plugs Into Everything</h3>
+            <p>POS systems, payment gateways, WhatsApp, email, SMS, CRMs — we integrate with your existing stack.</p>
+            <span class="b-tag">Integrations</span>
+          </div>
         </div>
-        <div class="bento-card reveal reveal-d2">
-          <span class="b-emoji"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="4" height="16" x="6" y="4" rx="1"></rect><rect width="4" height="8" x="14" y="12" rx="1"></rect><path d="M2 20h20"></path></svg></span>
-          <h3>Real-Time Dashboard</h3>
-          <p>See orders, appointments, tickets, and performance in one beautiful dashboard. Updated live.</p>
-          <span class="b-tag">Analytics</span>
+        <div class="bento-card reveal tilt-card">
+          <div class="card-content">
+            <span class="b-emoji"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="4" height="16" x="6" y="4" rx="1"></rect><rect width="4" height="8" x="14" y="12" rx="1"></rect><path d="M2 20h20"></path></svg></span>
+            <h3>Real-Time Dashboard</h3>
+            <p>See orders, appointments, tickets, and performance in one beautiful dashboard. Updated live.</p>
+            <span class="b-tag">Analytics</span>
+          </div>
         </div>
-        <div class="bento-card reveal reveal-d3">
-          <span class="b-emoji"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span>
-          <h3>Secure by Default</h3>
-          <p>End-to-end encryption, data privacy compliance, and regular security audits. Your data stays yours.</p>
-          <span class="b-tag">Security</span>
+        <div class="bento-card reveal tilt-card">
+          <div class="card-content">
+            <span class="b-emoji"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span>
+            <h3>Secure by Default</h3>
+            <p>End-to-end encryption, data privacy compliance, and regular security audits. Your data stays yours.</p>
+            <span class="b-tag">Security</span>
+          </div>
         </div>
       </div>
     </div>
@@ -312,6 +323,7 @@ function faq() {
 function ctaSection() {
   return `
   <section class="cta-section" id="cta">
+    <div class="cta-mesh"></div>
     <div class="container reveal">
       <h2>Ready to launch your AI Agent?</h2>
       <p class="cta-desc">Join thousands of businesses automating their operations. Build your custom AI agent today directly from our platform.</p>
@@ -333,7 +345,7 @@ function footer() {
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="#" class="nav-logo"><img src="/logo.png" alt="A2Z Flow"/>A2Z Flow<span class="brand-dot">.</span></a>
+          <a href="#" class="nav-logo"><img src="/logo.png" alt="A2Z Flow"/></a>
           <p>We build AI-powered workflows that automate your business operations. Less manual work. Lower costs. Better experience for your customers.</p>
         </div>
         <div class="footer-col">
@@ -353,6 +365,7 @@ function footer() {
             <li><a href="#use-cases">Hotels</a></li>
             <li><a href="#use-cases">Retail</a></li>
             <li><a href="#use-cases">Salons</a></li>
+            <li><a href="#use-cases">Offices</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -434,6 +447,7 @@ function init() {
   initStatCounters();
   initContactModal();
   initDesignConfigurator();
+  initDynamicEffects();
 }
 
 function initSmoothScroll() {
@@ -617,6 +631,118 @@ function initContactModal() {
   });
 }
 
+function initDynamicEffects() {
+  // 1. Global Cursor Glow
+  const glow = document.getElementById('cursor-glow');
+  window.addEventListener('mousemove', (e) => {
+    if (glow) {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top = e.clientY + 'px';
+    }
+  }, { passive: true });
+
+  // 2. Navbar & Scroll Progress
+  const navbar = document.querySelector('.navbar');
+  const progress = document.getElementById('scroll-progress');
+  
+  if (navbar || progress) {
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      
+      if (navbar) {
+        if (scrollY > 60) {
+          navbar.style.height = '56px';
+          navbar.style.background = 'rgba(7, 8, 10, 0.95)';
+        } else {
+          navbar.style.height = '68px';
+          navbar.style.background = 'rgba(7, 8, 10, 0.85)';
+        }
+      }
+
+      if (progress) {
+        const height = document.documentElement.scrollHeight - window.innerHeight;
+        const percentage = Math.min((scrollY / height) * 100, 100);
+        progress.style.width = percentage + '%';
+      }
+    }, { passive: true });
+  }
+
+  // 3. Mouse Interaction (Parallax, Magnetic, 3D Tilt)
+  const hero = document.querySelector('.hero');
+  const magneticBtns = document.querySelectorAll('.hero .btn');
+  const tiltCards = document.querySelectorAll('.tilt-card, #hero-visual');
+  const ctaMesh = document.querySelector('.cta-mesh');
+
+  window.addEventListener('mousemove', (e) => {
+    const rx = (e.clientX / window.innerWidth - 0.5);
+    const ry = (e.clientY / window.innerHeight - 0.5);
+    
+    // Parallax Orbs & Grid
+    if (hero) {
+      hero.style.setProperty('--mx', (rx * 60) + 'px');
+      hero.style.setProperty('--my', (ry * 60) + 'px');
+    }
+
+    // CTA Mesh Drift
+    if (ctaMesh) {
+      ctaMesh.style.transform = `translate(${rx * 40}px, ${ry * 30}px) scale(1.1)`;
+    }
+
+    // Magnetic Buttons
+    if (window.innerWidth > 1024) {
+      magneticBtns.forEach(btn => {
+        const rect = btn.getBoundingClientRect();
+        const bx = rect.left + rect.width / 2;
+        const by = rect.top + rect.height / 2;
+        const dist = Math.hypot(e.clientX - bx, e.clientY - by);
+        
+        if (dist < 80) {
+          btn.style.transform = `translate(${(e.clientX - bx) * 0.4}px, ${(e.clientY - by) * 0.4}px)`;
+          btn.style.transition = 'none';
+        } else {
+          btn.style.transform = `translate(0, 0)`;
+          btn.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+        }
+      });
+
+      // 3D Tilt Effect
+      tiltCards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        if (e.clientX > rect.left && e.clientX < rect.right && e.clientY > rect.top && e.clientY < rect.bottom) {
+          const cx = rect.left + rect.width / 2;
+          const cy = rect.top + rect.height / 2;
+          const dx = (e.clientX - cx) / (rect.width / 2);
+          const dy = (e.clientY - cy) / (rect.height / 2);
+          card.style.transform = `rotateY(${dx * 8}deg) rotateX(${-dy * 8}deg) scale(1.02)`;
+        } else {
+          card.style.transform = 'rotateY(0) rotateX(0) scale(1)';
+        }
+      });
+    }
+  }, { passive: true });
+
+  // 4. Stagger Reveal
+  const staggerObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const children = entry.target.querySelectorAll('.tl-item, .bento-card, .stat-card, .faq-item, .cd-step');
+        children.forEach((child, i) => {
+          child.style.opacity = '0';
+          child.style.transform = 'translateY(30px) scale(0.98)';
+          setTimeout(() => {
+            child.style.transition = 'opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+            child.style.opacity = '1';
+            child.style.transform = 'translateY(0) scale(1)';
+          }, i * 140);
+        });
+        staggerObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.timeline, .bento-grid, .stats-grid, .faq-list, .cd-visual').forEach(el => staggerObs.observe(el));
+}
+
 function designConfigurator() {
   return `
   <div class="design-config-panel" id="design-config-panel">
@@ -692,5 +818,3 @@ function initDesignConfigurator() {
     });
   });
 }
-
-
