@@ -669,7 +669,7 @@ function initDesignConfigurator() {
     btn.addEventListener('click', () => {
       themeBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      document.body.className = \`\${btn.dataset.theme} \${document.body.className.replace(/theme-[a-zA-Z0-9-]+/g, '').trim()}\`.trim();
+      document.body.className = `${btn.dataset.theme} ${document.body.className.replace(/theme-[a-zA-Z0-9-]+/g, '').trim()}`.trim();
     });
   });
 
@@ -678,7 +678,7 @@ function initDesignConfigurator() {
     btn.addEventListener('click', () => {
       fontBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      document.body.className = \`\${btn.dataset.font} \${document.body.className.replace(/font-[a-zA-Z0-9-]+/g, '').trim()}\`.trim();
+      document.body.className = `${btn.dataset.font} ${document.body.className.replace(/font-[a-zA-Z0-9-]+/g, '').trim()}`.trim();
     });
   });
 
