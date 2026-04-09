@@ -130,8 +130,8 @@ function bento() {
         </div>
         <div class="bento-card reveal reveal-d2">
           <span class="b-emoji"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg></span>
-          <h3>Live in 2 Weeks</h3>
-          <p>From first conversation to fully deployed workflow in your business — typically under 14 days.</p>
+          <h3>Live in 48 Hours</h3>
+          <p>From sign-up to a fully deployed AI agent handling real customers — typically under 2 days.</p>
           <span class="b-tag">Speed</span>
         </div>
         <div class="bento-card reveal reveal-d1">
@@ -270,7 +270,7 @@ function statsBar() {
     <div class="container">
       <div class="stats-grid">
         <div class="stat-card"><div class="stat-val" data-target="40" data-suffix="%">0</div><div class="stat-lbl">Avg Cost Reduction</div></div>
-        <div class="stat-card"><div class="stat-val" data-target="14" data-suffix=" days">0</div><div class="stat-lbl">Average Setup Time</div></div>
+        <div class="stat-card"><div class="stat-val" data-target="2" data-suffix=" days">0</div><div class="stat-lbl">Average Setup Time</div></div>
         <div class="stat-card"><div class="stat-val" data-target="99.9" data-suffix="%">0</div><div class="stat-lbl">Uptime SLA</div></div>
         <div class="stat-card"><div class="stat-val" data-target="24" data-suffix="/7">0</div><div class="stat-lbl">Support Available</div></div>
       </div>
@@ -692,3 +692,4 @@ function initDesignConfigurator() {
     });
   });
 }
+
