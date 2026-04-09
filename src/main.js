@@ -14,6 +14,7 @@ ${faq()}
 ${ctaSection()}
 ${footer()}
 ${contactModal()}
+${designConfigurator()}
 `;
 
 init();
@@ -51,17 +52,17 @@ function hero() {
     <div class="container">
       <div class="hero-content">
         <div class="hero-pill">
-          <span class="pill-badge">NEW</span>
-          AI-powered workflows for real businesses
+          <span class="pill-badge">SaaS Update</span>
+          Self-serve AI infrastructure for MSMEs
         </div>
-        <h1>We automate your<br/><span class="typed-text" id="typed-text">restaurant</span><span class="typed-cursor" id="typed-cursor"></span><br/>with AI workflows.</h1>
-        <p class="hero-desc">A2Z Flow builds and deploys custom AI systems that take over manual tasks — ordering, scheduling, customer support, and more. Your business runs smarter.</p>
+        <h1>Launch your AI Agent<br/>for your <span class="typed-text" id="typed-text">restaurant</span><span class="typed-cursor" id="typed-cursor"></span><br/>in 5 minutes.</h1>
+        <p class="hero-desc">No coding, no agencies, no waiting. Build and deploy a fully autonomous AI agent that handles your customer service, bookings, and sales — directly from your dashboard.</p>
         <div class="hero-actions">
           <button class="btn btn-brand open-modal-btn" data-type="demo">
-            Get Started
+            Start Building Free
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12h14M12 5l7 7-7 7"/></svg>
           </button>
-          <a href="#use-cases" class="btn btn-outline">See Use Cases</a>
+          <a href="#process" class="btn btn-outline">See How It Works</a>
         </div>
       </div>
 
@@ -158,18 +159,18 @@ function bento() {
 
 function timeline() {
   const steps = [
-    { n: '1', title: 'Discovery Call', desc: 'We hop on a call, understand your business, identify the manual tasks draining your time and money, and map out the ideal AI workflow.' },
-    { n: '2', title: 'Design & Build', desc: 'Our team designs the user interface, builds the AI logic, sets up integrations with your tools (POS, payments, CRM), and configures everything.' },
-    { n: '3', title: 'Test & Deploy', desc: 'We test rigorously in your environment, train your team on the new system, and go live. Typical timeline: 2 weeks from start to live.' },
-    { n: '4', title: 'Maintain & Improve', desc: 'We monitor performance 24/7, fix issues instantly, and continuously improve the AI based on real usage data. You just enjoy the results.' },
+    { n: '1', title: 'Create & Connect', desc: 'Sign up and connect your existing channels — WhatsApp, Instagram, or your PBX phone line with a single click.' },
+    { n: '2', title: 'Upload Knowledge', desc: 'Upload your menus, pricing PDFs, FAQs, or past email responses. The AI instantly trains itself on your specific business rules.' },
+    { n: '3', title: 'Configure Actions', desc: 'Link your backend tools. Tell the AI when to trigger a payment link, when to check your calendar, or when to notify your kitchen.' },
+    { n: '4', title: 'Go Live & Automate', desc: 'Toggle the switch to Live. Watch your custom dashboard as the AI handles hundreds of customer conversations and tasks simultaneously.' },
   ];
   return `
   <section class="timeline-section" id="process">
     <div class="container">
       <div class="section-header reveal">
-        <p class="section-label">Our Process</p>
-        <h2 class="section-title">From idea to live workflow<br/>in four simple steps.</h2>
-        <p class="section-desc">We handle everything. You focus on your business.</p>
+        <p class="section-label">Deploy in Minutes</p>
+        <h2 class="section-title">Zero code. Zero delays.<br/>You are in full control.</h2>
+        <p class="section-desc">We replaced the traditional 4-week agency build with a 5-minute self-serve platform.</p>
       </div>
       <div class="timeline reveal">
         ${steps.map(s => `
@@ -312,16 +313,16 @@ function ctaSection() {
   return `
   <section class="cta-section" id="cta">
     <div class="container reveal">
-      <h2>Ready to automate your business?</h2>
-      <p class="cta-desc">Tell us what you want to automate. We'll show you exactly how it works and how much you'll save — for free, no strings attached.</p>
+      <h2>Ready to launch your AI Agent?</h2>
+      <p class="cta-desc">Join thousands of businesses automating their operations. Build your custom AI agent today directly from our platform.</p>
       <div class="cta-actions">
-        <button class="btn btn-brand open-modal-btn" data-type="contact">
-          Get in Touch
+        <button class="btn btn-brand open-modal-btn" data-type="demo">
+          Start Building For Free
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12h14M12 5l7 7-7 7"/></svg>
         </button>
-        <button class="btn btn-outline open-modal-btn" data-type="demo">Request a Demo</button>
+        <button class="btn btn-outline open-modal-btn" data-type="contact">Talk to Sales</button>
       </div>
-      <p class="cta-email">Or email us directly at <a href="mailto:support@a2zflow.in">support@a2zflow.in</a></p>
+      <p class="cta-email">Enterprise? Email us at <a href="mailto:support@a2zflow.in">support@a2zflow.in</a></p>
     </div>
   </section>`;
 }
@@ -432,6 +433,7 @@ function init() {
   initFAQ();
   initStatCounters();
   initContactModal();
+  initDesignConfigurator();
 }
 
 function initSmoothScroll() {
@@ -612,5 +614,81 @@ function initContactModal() {
       submitBtn.classList.remove('loading');
       statusEl.style.display = 'block';
     }
+  });
+}
+
+function designConfigurator() {
+  return `
+  <div class="design-config-panel" id="design-config-panel">
+    <div class="dc-header">
+      <h4>UI Configurator</h4>
+      <p>Test Themes & Fonts Live</p>
+    </div>
+    <div class="dc-body">
+      <div class="dc-group">
+        <label>Theme</label>
+        <button class="dc-btn active" data-theme="theme-default">Default (Dark)</button>
+        <button class="dc-btn" data-theme="theme-light">SaaS Light</button>
+        <button class="dc-btn" data-theme="theme-b2b">Enterprise Clean</button>
+      </div>
+      <div class="dc-group">
+        <label>Typography</label>
+        <button class="dc-btn active" data-font="font-inter">Inter</button>
+        <button class="dc-btn" data-font="font-outfit">Outfit</button>
+        <button class="dc-btn" data-font="font-serif">Playfair (Serif)</button>
+      </div>
+      <div class="dc-group">
+        <label>Primary Brand Color</label>
+        <div class="color-swatches">
+          <span class="swatch active" data-color="#ff8a00" style="background:#ff8a00"></span>
+          <span class="swatch" data-color="#3b82f6" style="background:#3b82f6"></span>
+          <span class="swatch" data-color="#10b981" style="background:#10b981"></span>
+          <span class="swatch" data-color="#6366f1" style="background:#6366f1"></span>
+          <span class="swatch" data-color="#e11d48" style="background:#e11d48"></span>
+          <span class="swatch" data-color="#f59e0b" style="background:#f59e0b"></span>
+        </div>
+      </div>
+    </div>
+    <button class="dc-toggle" id="dc-toggle" aria-label="Toggle Design Configurator">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+    </button>
+  </div>`;
+}
+
+function initDesignConfigurator() {
+  const panel = document.getElementById('design-config-panel');
+  if (!panel) return;
+  const toggleBtn = document.getElementById('dc-toggle');
+  
+  toggleBtn.addEventListener('click', () => {
+    panel.classList.toggle('open');
+  });
+
+  const themeBtns = panel.querySelectorAll('[data-theme]');
+  themeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      themeBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.body.className = \`\${btn.dataset.theme} \${document.body.className.replace(/theme-[a-zA-Z0-9-]+/g, '').trim()}\`.trim();
+    });
+  });
+
+  const fontBtns = panel.querySelectorAll('[data-font]');
+  fontBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      fontBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.body.className = \`\${btn.dataset.font} \${document.body.className.replace(/font-[a-zA-Z0-9-]+/g, '').trim()}\`.trim();
+    });
+  });
+
+  const swatches = panel.querySelectorAll('.swatch');
+  swatches.forEach(swatch => {
+    swatch.addEventListener('click', () => {
+      swatches.forEach(s => s.classList.remove('active'));
+      swatch.classList.add('active');
+      document.documentElement.style.setProperty('--brand', swatch.dataset.color);
+      document.documentElement.style.setProperty('--brand-glow', swatch.dataset.color + '55'); // Add alpha
+    });
   });
 }
