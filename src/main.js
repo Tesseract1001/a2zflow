@@ -282,7 +282,7 @@ function faq() {
   const items = [
     { q: 'How much does it cost?', a: 'Every project is different. We offer a free discovery call to understand your needs and give you a clear, no-surprise quote. Most businesses see ROI within the first month of deployment.' },
     { q: 'Do I need any technical knowledge?', a: 'Absolutely not. We handle 100% of the technical work — design, development, integration, and deployment. You just tell us what problems you want solved, and we build the solution.' },
-    { q: 'How long does setup take?', a: 'Typically 2 weeks from our first call to live deployment. Simple workflows can go live even sooner. We work fast and keep you updated throughout.' },
+    { q: 'How long does setup take?', a: 'Typically under 48 hours from sign-up to live deployment. Most agents go live the same day. We keep you updated throughout.' },
     { q: 'What if something breaks?', a: 'We provide 24/7 monitoring and support. If anything goes wrong, our team is on it immediately. We also do proactive maintenance to prevent issues before they happen.' },
     { q: 'Can I customize the workflow later?', a: 'Yes! Your workflow evolves with your business. Want to add a new feature, support a new channel, or change the flow? Just tell us, and we\'ll update it — usually within days.' },
     { q: 'Is my customer data safe?', a: 'Security is built into everything we do. All data is encrypted, access is controlled, and we follow industry best practices. We can also accommodate specific compliance requirements like HIPAA or GDPR.' },
@@ -692,4 +692,5 @@ function initDesignConfigurator() {
     });
   });
 }
+
 
